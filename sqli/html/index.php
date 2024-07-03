@@ -1,3 +1,9 @@
+<h1>SQL Injection Demo</h1>
+<form method="GET" action="index.php">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    <input type="submit" value="Search">
+</form>
 <?php
 $servername = "db";
 $username = "readonlyuser";
@@ -13,6 +19,9 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT id, username, email FROM users WHERE username = '" . $_GET['username'] . "'";
+
+echo $sql;
+echo '<br />';
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

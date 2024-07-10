@@ -3,11 +3,11 @@ services:
   web:
     build: .
     ports:
-      - '5000:5000'
-    networks:
-      - no-internet
+      - '3100:3100'
+#     networks:
+#       - no-internet
 
-networks:
-  no-internet:
-    driver: bridge
-    internal: true
+# networks:
+#   no-internet:
+#     driver: bridge
+#     internal: true
